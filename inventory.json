@@ -1,0 +1,45 @@
+[
+    {
+        "name": "Milk",
+        "brand": "Brookside",
+        "category": "Dairy",
+        "quantity": 20,
+        "price": 60,
+        "barcode": "123456789"
+    },
+    {
+        "name": "Bread",
+        "brand": "SuperLoaf",
+        "category": "Bakery",
+        "quantity": 15,
+        "price": 50,
+        "barcode": "987654321"
+    },
+    {
+        "name": "Coca Cola",
+        "brand": "Coca Cola",
+        "category": "Drink",
+        "quantity": 30,
+        "price": 100,
+        "barcode": "5449000000996"
+    },
+    {
+        "name": "Biscuits",
+        "brand": "Britannia",
+        "category": "Snacks",
+        "quantity": 25,
+        "price": 40,
+        "barcode": "111222333"
+    },
+    {
+        "name": "Rice",
+        "brand": "Pishori",
+        "category": "Grains",
+        "quantity": 50,
+        "price": 180,
+        "barcode": "444555666"
+    },
+    {
+        "name": "Test"
+    }
+]
