@@ -14,5 +14,15 @@ class TestAPI(unittest.TestCase):
         response = self.client.post('/items', json={"name": "Test"})
         self.assertEqual(response.status_code, 200)
 
+    def test_update_item(self):
+        self.client.post('/items', json={"name": "Test"})
+        response = self.client.patch('/items/0', json={"name": "Updated"})
+        self.assertEqual(response.status_code, 200)
+
+    def test_delete_item(self):
+        self.client.post('/items', json={"name": "Test"})
+        response = self.client.delete('/items/0')
+        self.assertEqual(response.status_code, 200)
+
 if __name__ == '__main__':
     unittest.main()
