@@ -4,11 +4,12 @@
 This project is a Flask-based REST API for managing inventory in a retail store. It allows users to perform CRUD operations and integrates an external API to fetch product details.
 
 ## Features
-- Create, Read, Update, Delete (CRUD) operations
+- Full CRUD operations (Create, Read, Update, Delete)
+- CLI interface supporting all CRUD operations
 - External API integration (OpenFoodFacts)
-- CLI interface for interacting with the API
+- Ability to fetch product data and add to inventory via CLI
 - Persistent storage using JSON file
-- Unit testing
+- Unit tests covering all CRUD operations
 
 ## Setup Instructions
 
