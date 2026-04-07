@@ -66,7 +66,7 @@ def delete_item(index):
         })
     return jsonify({"error": "Item not found"})
 
-# 🌍 EXTERNAL API (FIXED + SAFE)
+# 🌍 IMPROVED EXTERNAL API
 @app.route('/fetch/<barcode>', methods=['GET'])
 def fetch_product(barcode):
     url = f"https://world.openfoodfacts.org/api/v0/product/{barcode}.json"
@@ -74,11 +74,9 @@ def fetch_product(barcode):
     try:
         response = requests.get(url, timeout=10)
 
-        # If request failed
         if response.status_code != 200:
             return jsonify({"error": "API request failed"})
 
-        # Try parsing JSON safely
         try:
             data = response.json()
         except:
@@ -86,10 +84,13 @@ def fetch_product(barcode):
 
         if data.get("status") == 1:
             product = data["product"]
+
+            # 👇 CLEAN DATA (this is the upgrade)
             return jsonify({
-                "name": product.get("product_name"),
-                "brand": product.get("brands"),
-                "category": product.get("categories")
+                "name": product.get("product_name") or "Unknown",
+                "brand": product.get("brands") or "Unknown",
+                "category": product.get("categories") or "General",
+                "barcode": barcode
             })
 
         return jsonify({"error": "Product not found"})
